@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'animated_drawer.dart';
 import 'app_drawer.dart';
+import 'home_screen.dart';
 import 'theme/theme_manager.dart';
 
 void main() {
@@ -60,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: AnimatedDrawer(
         controller: _controller,
         drawer: const AppDrawer(),
-        screen: Container(color: Colors.orange),
+        screen: const HomeScreen(),
       ),
     );
   }
