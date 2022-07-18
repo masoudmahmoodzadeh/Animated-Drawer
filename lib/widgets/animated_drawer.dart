@@ -35,6 +35,13 @@ class AnimatedDrawerState extends State<AnimatedDrawer>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+
+    widget.controller._animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.controller._animationController,
