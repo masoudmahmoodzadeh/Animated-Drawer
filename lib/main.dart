@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'custom_drawer.dart';
+import 'animated_drawer.dart';
+import 'app_drawer.dart';
+import 'theme/theme_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeManager().create(),
       home: const MyHomePage(title: 'Animated Drawer'),
     );
   }
@@ -57,9 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
       ),
-      body: CustomDrawer(
+      body: AnimatedDrawer(
         controller: _controller,
-        drawer: Container(color: Colors.black),
+        drawer: const AppDrawer(),
         screen: Container(color: Colors.orange),
       ),
     );

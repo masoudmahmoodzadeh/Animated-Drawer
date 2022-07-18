@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 typedef OnDrawerStateChangedCallback = Function(DrawerState state);
 
-class CustomDrawer extends StatefulWidget {
+class AnimatedDrawer extends StatefulWidget {
   final CustomDrawerController controller;
   final Widget drawer;
   final Widget screen;
 
-  const CustomDrawer({
+  const AnimatedDrawer({
     Key? key,
     required this.controller,
     required this.drawer,
@@ -15,10 +15,10 @@ class CustomDrawer extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CustomDrawer> createState() => CustomDrawerState();
+  State<AnimatedDrawer> createState() => AnimatedDrawerState();
 }
 
-class CustomDrawerState extends State<CustomDrawer>
+class AnimatedDrawerState extends State<AnimatedDrawer>
     with SingleTickerProviderStateMixin {
   final double _maxSlide = 225;
 
