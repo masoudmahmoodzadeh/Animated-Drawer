@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeManager().create(),
+      debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'Animated Drawer'),
     );
   }
