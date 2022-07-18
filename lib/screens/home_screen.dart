@@ -55,8 +55,13 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {},
-              child: const Text("Get Started"),
-            )
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text("Get Started"),
+              ),
+            ),
+            const SizedBox(height: 16),
+
           ],
         ),
       ),

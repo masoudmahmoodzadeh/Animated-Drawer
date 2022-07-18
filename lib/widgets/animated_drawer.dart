@@ -21,6 +21,7 @@ class AnimatedDrawer extends StatefulWidget {
 class AnimatedDrawerState extends State<AnimatedDrawer>
     with SingleTickerProviderStateMixin {
   final double _maxSlide = 225;
+  double childRadius = 32;
 
   @override
   void initState() {
@@ -30,6 +31,7 @@ class AnimatedDrawerState extends State<AnimatedDrawer>
       vsync: this,
       duration: widget.controller.duration,
     );
+
   }
 
   @override
@@ -39,6 +41,7 @@ class AnimatedDrawerState extends State<AnimatedDrawer>
       builder: (BuildContext context, Widget? child) {
         double slide = widget.controller._animationController.value * _maxSlide;
         double scale = 1 - (widget.controller._animationController.value * 0.3);
+        double radius = widget.controller._animationController.value *childRadius;
         return Stack(
           children: [
             widget.drawer,
@@ -47,7 +50,21 @@ class AnimatedDrawerState extends State<AnimatedDrawer>
                 ..translate(slide)
                 ..scale(scale),
               alignment: Alignment.centerLeft,
-              child: widget.screen,
+              child:Container(
+                decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black45,
+                      blurRadius: 30,
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(radius),
+                ),
+                child:  ClipRRect(
+                  borderRadius: BorderRadius.circular(radius),
+                  child: widget.screen,
+                ),
+              ),
             ),
           ],
         );

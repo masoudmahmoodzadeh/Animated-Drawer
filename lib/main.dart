@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'animated_drawer.dart';
-import 'app_drawer.dart';
-import 'home_screen.dart';
+import 'screens/app_drawer.dart';
+import 'screens/home_screen.dart';
 import 'theme/theme_manager.dart';
+import 'widgets/animated_drawer.dart';
+import 'widgets/icon_animated.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,8 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        leading: IconButton(
-          icon: const Icon(Icons.add),
+        leading: IconAnimated(
           onPressed: () {
             _controller.toggle();
           },
